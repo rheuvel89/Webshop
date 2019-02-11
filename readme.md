@@ -1,4 +1,4 @@
-** Introduction **
+# ** Introduction **
 
 Sogyo Adventure is a new service for Sogyo employees to buy family tickets for amusement parks with attractive discounts. The goal of Sogyo Adventure is to make it as easy as possible to buy tickets. That means that the webshop itself should be as easy to use as possible. According to market research the user base is split almost exactly between desktop, tablet and mobile devices. This means the site should work on every device - large and small.
 
@@ -18,7 +18,7 @@ To get an idea of what Sogyo Adventure could look like, a prototype will first b
 
 Open `index.html` in your browser of choice to see what the the application looks like to users. Also open `index.html` in your favorite editor. If you make changes to the html file, you'll need to reload that page in your browser. By using the developer tools within your browser, you can usually edit the html and/or css on the go, but changes aren't saved.
 
-** Task 1: styling **
+# ** Task 1: styling **
 
 There's a few requirements to the look and feel of the page:
 * The header should always be at the top of the page, even if the user scrolls down, so that the shopping basket is easily accessible
@@ -55,7 +55,7 @@ Otherwise get creative! Try changing colors, fonts, color gradients, borders, ro
 
 You have about a day for this task (working on the requirements first before getting creative).
 
-** Task 2: the index page **
+# ** Task 2: the index page **
 
 The buttons to order tickets will all get the same functionality. A so called event listener that gets fired when the user clicks on one of those buttons. The following steps will guide you through the process of registering event listeners and implementing their behavior. Don't worry about the discounts for family tickets just yet.
 
@@ -67,7 +67,7 @@ The buttons to order tickets will all get the same functionality. A so called ev
 6. Implement `saveOrderInShoppingBasket`. The order should be saved locally on the clients machine in a way that allows the user to close the browser without the order being lost by using `localStorage`. The `localStorage` is a key-value pair store that works with string values only. You'll need to think of a way to persist/save several orders at once.
 7. Once the order is added to the shopping basket the number of items in the shopping basket should be updated. It's displayed in the element with class `"badge"` under the `"#shoppingbasket"`.
 
-** Task 3: Shopping Basket **
+# ** Task 3: Shopping Basket **
 
 We'll now implement the shopping basket, in `shoppingbasket.html` and `shoppingbasket.js`.
 
@@ -75,7 +75,7 @@ We'll now implement the shopping basket, in `shoppingbasket.html` and `shoppingb
 2. `shoppingbasket.html` defines a template, i.e. the HTML that should be used for each of the users ordered tickets, but the template itself is never shown to the user. Iterate over each ticket in the shopping basket and add a node to the `<main>` element for each ticket, based on the pre-defined `<template>`. Make sure to display the correct park name, number of adults and number of children on each ticket. The button to finalize the order should remain at the bottom of the page.
 3. Add an event listener to the finalize payment method. As this is only a prototype, we skip handling the actual payment. Instead simply call `api/placeorder` using the `fetch()` method. After the request has been handled clear the users shopping basket and redirect them to `orderplaced.html`. The fetch probably fails right now. That's because there's no server to fetch the resources from.
 
-** Task 4: The server **
+# ** Task 4: The server **
 
 1. Install the Node.js webserver (https://nodejs.org/en/) and run the `npm install` command in the main folder of the project. This downloads the project dependencies defined in `package.json`. Finally run the project using `node main.js` and going to `localhost:8000` in your browser. You should see the working version of the Sogyo Adventure webshop so far.
 2. Open `main.js` and look at the various routes defined there. Before continuing with the other tasks, understand what each of the routes does and what they might do.
@@ -87,12 +87,12 @@ We'll now implement the shopping basket, in `shoppingbasket.html` and `shoppingb
 
 It helps if you're familiar with the basics of API's. Look into: HTTP requests, HTTP verbs and HTTP response codes.
 
-** Task 5: Discoverable Map **
+# ** Task 5: Discoverable Map **
 
 1. Install Leaflet.js (https://leafletjs.com/) and follow the instructions on https://maps.stamen.com (specifically those for Leaflet), replacing `"element_id"` in the example code with `"map"`. Stamen provides rendered map tiles based on the Open Street Map data, Leaflet is a library to work with those map tiles. As a starting point choose `(52.1026406, 5.175044799999999)` with a zoom level of 10. This should result in a large map of The Netherlands. Note: you're free to choose between the Toner, Terrain or Watercolor maps Stamen offers.
 2. After the map has done loading, fetch all attractions from `api/attractions` and display a marker for each attraction. The user should be able to click on the marker to see the attraction name and description. 
 
-** Task 6: Finalizing the prototype (optional) **
+# ** Task 6: Finalizing the prototype (optional) **
 
 If you're done with tasks 1 through 5 and have some time left, look into the following additional tasks to really complete the shop:
 
@@ -101,7 +101,7 @@ If you're done with tasks 1 through 5 and have some time left, look into the fol
 * Display a list of attractions ordered by prize. Allow the user to sort from highest to lowest or lowest to highest. In addition you may also allow sorting nearby to far away.
 * Update your client side code to TypeScript instead of JavaScript. At the very least, define parameter types and return value types. The compiler should be able to infer the types of variables based on these other two type definitions.
 
-** Task 7: Integration with a Database **
+# ** Task 7: Integration with a Database **
 
 This step should only be completed after the Database case has been completed.
 
