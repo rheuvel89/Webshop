@@ -1,3 +1,41 @@
 article {
     height: auto;
 }
+
+#finalizepaymentbutton {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 5px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#finalizepaymentbutton:hover {
+  background-color: #004400;
+}
+
+#finalizepaymentbuttonorderbutton:active {
+  background-color: #000000;
+}
+
+.cancelbutton{
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 5px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.cancelbutton:hover {
+  background-color: #004400;
+}
+
+.cancelbutton:active {
+  background-color: #000000;
+}

@@ -4,6 +4,8 @@
   "description": "Het project voor de Ticketshop opdracht",
   "main": "main.js",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "mysql-json": "^0.1.3"
   }
 }

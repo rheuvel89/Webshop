@@ -9,31 +9,109 @@ body {
 }
 
 /* Describes the styling of the one and only emenent with id="mainheader", note the # in front of mainheader */
-#mainheader {
-    background-color: var(--primary-color);
-    font-size: 3rem;
-    color: white;
-}
-
 #logo-header {
-    display: flex;
+	display: flex;
     justify-content: flex-start;
     align-items: center;
+	background-color: white;
+	position: fixed;
+	top: 0;
+	height: 200px;
+	width: 100%;	
+}
+
+#mainheader {
+	background-color: var(--primary-color);
+	font-size: 3rem;
+	color: white;
+	position: fixed;
+	top: 200px;
+	height: 80px;
+	width: 100%
+}
+
+nav {
+    height: 2rem;
+    line-height: 2rem;
+    background-color: var(--primary-color);
+	position: fixed;
+	top: 280px;
+	width: 100%;
+	text-align: center;
+}
+
+nav a {
+	color: white;
+}
+
+nav a:hover {
+	color: black;
+}
+
+
+main {
+    padding: 320px 25px ;
+}
+
+@media screen and (max-width: 780px) {
+	#mainheader {
+		font-size: 2rem;
+		height: 60px;
+	}
+	
+	nav {
+		top: 260px;
+	}
+	
+	main {
+		padding: 300px 25px ;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#logo-header {
+		display:none
+	}
+	
+	#mainheader {
+		background-color: var(--primary-color);
+		font-size: 1.5rem;
+		top: 0;
+		height: 45px;
+	}
+	
+	nav {
+		top: 45px;
+	}
+	
+		
+	main {
+		padding: 80px 25px ;
+	}	
 }
 
 #logo-header img {
+	background-color: white;
     margin-left: 30px;
 }
 
-main {
-    padding: 25px;
+.orderbutton {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 5px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
-nav
-{
-    height: 2rem;
-    line-height: 2rem;
-    background-color: var(--accent-color);
+.orderbutton:hover {
+  background-color: #004400;
+}
+
+.orderbutton:active {
+  background-color: #000000;
 }
 
 /* Describes the styling of all elements with class="parkname", note the . in front of parkname */
@@ -47,9 +125,13 @@ nav
 
 /* Describes the styling of all <article> elements */
 article {
+	
+	display: inline-grid;
     border: 1px solid var(--primary-color);
     color: var(--light-text-color);
     margin: 5px;
+	width: 260px;
+	height: 100%
 }
 
 .order {

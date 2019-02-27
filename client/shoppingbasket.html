@@ -3,11 +3,12 @@
 <html lang="nl">
     <head>
         <meta charset="utf-8">
-
+tic
         <title>Sogyo Adventure</title>
         <meta name="description" content="The ticket shop for Sogyo employees">
 
         <link rel="stylesheet" href="style/main.css">
+		<link rel="stylesheet" href="style/shoppingbasket.css">
     </head>
 
     <body>
@@ -41,17 +42,22 @@
         </nav>
 
         <main>
-            <button id="finalizepaymentbutton">Pay now</button>
+			<p>
+				<button id="finalizepaymentbutton">Pay now</button>
+			</p>
         </main>
 
         <template id="ticket">
             <article>
-                <div>Parkname</div>
-                <div>Adults: </div>
-                <div>Kids:</div>
-                <button>Cancel order</button>
+                <div class="parkname"></div>
+                <div class="adults"></div>
+                <div class="kids"></div>
+				<div class="total"></div>
+                <button class="cancelbutton">Cancel order</button>
             </article>
         </template>
 
+        <script src="src/common.js"></script>
+        <script src="src/shoppingbasket.js"></script>
     </body>
 </html>
