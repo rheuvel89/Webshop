@@ -31,7 +31,7 @@ function addChangeEventListener(item, template) {
 		var numberOfKids = parseInt(article.querySelector(".numberofkids").value);
 		numberOfAdults = numberOfAdults ? numberOfAdults : 0;
 		numberOfKids = numberOfKids ? numberOfKids : 0;
-		var discount = numberOfAdults >= item.minimumNumberOfAdults && numberOfKids >= item.minimumNumberOfKids ? 1 - item.discount/100 : 1;
+		var discount = numberOfAdults >= item.minAdults && numberOfKids >= item.minKids ? 1 - item.percentage/100 : 1;
 		article.querySelector(".adultprice").innerText = "Adults: €" + Math.floor(item.adultPrice*discount) + ",-";
 		article.querySelector(".kidsprice").innerText = "Kids: €" + Math.floor(item.kidsPrice*discount) + ",-";
 		article.querySelector(".total").innerText = ﻿"Total: €" + Math.floor((item.adultPrice*numberOfAdults + item.kidsPrice*numberOfKids)*discount) + ",-";
@@ -45,7 +45,7 @@ function fillTemplate(item, template) {
 	template.querySelector(".parkdescription").innerText = item.description;
 	template.querySelector(".adultprice").innerText = "Adults: €" + item.adultPrice + ",-";
 	template.querySelector(".kidsprice").innerText = "Kids: €" + item.kidsPrice + ",-";
-	template.querySelector(".discountrequirement").innerHTML = ﻿"<em>Family ticket:</em> Buy " + item.minimumNumberOfAdults + " adult tickets & " + item.minimumNumberOfKids + " kid tickets for a " + item.discount + "% discount!";
+	template.querySelector(".discountrequirement").innerHTML = ﻿"<em>Family ticket:</em> Buy " + item.minAdults + " adult tickets & " + item.minKids + " kid tickets for a " + item.percentage + "% discount!";
 	template.querySelector(".total").innerText = ﻿"Total: €0,-";
 	addChangeEventListener(item, template);
 	return template;
@@ -55,9 +55,10 @@ function appendItem(item) {
 	if (item.available > 0) { //TODO: Disable order button instead of removing item
 		var template = document.getElementById('article_template').content.cloneNode(true);
 		template = fillTemplate(item, template);
+		var orderButton = template.querySelector(".orderbutton");
+		orderButton.addEventListener("click", orderButtonClicked);
 		document.body.querySelector("main").appendChild(template);
-		var orderButtons = document.querySelectorAll(".orderbutton");
-		orderButtons.forEach((item) => item.addEventListener("click", orderButtonClicked));
+		
 	}
 }
 
